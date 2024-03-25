@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    overflow: hidden;
+}
+
+.container {
+    font-size: 10px;
+    width: 40em;
+    height: 40em;
+    position: relative;
+}
+.sun {
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 3em white;
+}
+.earth,.moon{
+    /*Les éléments "earth" et "moon" ont une position absolue. 
+    Cela signifie qu'ils sont positionnés par rapport à leur premier parent ayant une position relative 
+    (dans ce cas, le premier parent avec une position relative est l'élément ayant la classe "container")*/
+        position: absolute;
+    /*Les éléments ont une bordure en solide.*/
+        border-style: solid;
+    /*La couleur de la bordure des éléments  est blanche sur le côté gauche,
+     transparent sur les autres côtés.*/
+        border-color: white transparent transparent transparent;
+    /*La largeur de la bordure des éléments "earth" et "moon" est de 0.1 "em" sur le côté gauche,
+    0.1 "em" sur le côté droit, 0 "em" sur le côté supérieur et 0 "em" sur le côté inférieur.*/
+        border-width: 0.1em 0.1em 0 0;
+    /*Les éléments "earth" et "moon" ont un rayon de bord de 50%, ce qui les rend circulaires*/
+        border-radius: 50%;
+        box-sizing: border-box;
+}
+.earth {
+    /*La distance entre le haut de l'élément "earth" et le haut de son parent est de 5 "em".*/
+        top: 6em;
+    /*La distance entre le côté gauche de l'élément "earth" et le côté gauche de son parent est de 5 "em".*/
+        left: 6em;
+    /*La largeur de l'élément "earth" est de 30 "em".*/
+        width: 30em;
+    /*La hauteur de l'élément "earth" est de 30 "em".*/
+        height: 30em;
+    /*L'élément "earth" effectue une animation nommée "orbit" qui dure 36,5 secondes.
+    Cette animation est une rotation circulaire. Le mode d'animation est "linear",
+    ce qui signifie que l'animation se déroule de manière uniforme. 
+    Le délai avant la répétition de l'animation est de 0 secondes.*/
+        animation: orbit 30s linear infinite;   
+}
+.moon {
+    /*La distance entre le haut de l'élément "moon" et le haut de son parent est de 0.*/
+        top: 0;
+    /*La distance entre le côté droit de l'élément "moon" et le côté droit de son parent est de 0.*/
+        right: 0;
+    /*La largeur de l'élément "moon" est de 8 "em"*/
+        width: 8em;
+    /*La hauteur de l'élément "moon" est de 8 "em"*/
+        height: 8em;
+    /*L'élément "moon" effectue une animation nommée "orbit" qui dure 2,7 secondes.
+    Cette animation est une rotation circulaire.
+    Le mode d'animation est "linear", ce qui signifie que l'animation se déroule de manière uniforme.
+    Le délai avant la répétition de l'animation est de 0 secondes.*/
+        animation: orbit 2.7s linear infinite;
+}
+.earth::before, .moon::before {
+/*Le pseudo-élément est rendu sur la page en ajoutant du contenu à l'intérieur de l'élément. 
+Cependant, en utilisant "content: '';", on indique qu'il n'y a pas de contenu à ajouter.*/
+content: '';
+/*Le pseudo-élément est positionné de manière absolue par rapport à son élément parent,
+ce qui signifie qu'il peut être positionné à un emplacement spécifique par rapport à cet élément parent.*/
+    position: absolute;
+/*Cette propriété est utilisée pour arrondir les bords du pseudo-élément, donnant ainsi l'apparence d'un disque.*/
+    border-radius: 50%;    
+}
+.earth::before {
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    background-color: aqua;    
+}
+.moon::before {
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background-color: silver;
+}
+/*La règle @keyframes "orbit" est utilisée pour définir des animations de rotation pour un élément.*/
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
