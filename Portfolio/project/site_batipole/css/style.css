@@ -1,0 +1,464 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: "DolceVita";
+    src: url(../fonts/DolceVita.ttf)
+}
+@font-face {
+    font-family: "Gothic A1";
+    src: url(../fonts/GothicA1-Bold.ttf)
+}
+@font-face {
+    font-family: "HelveticaN";
+    src: url(../fonts/HelveticaN.ttf)
+}
+@font-face {
+    font-family: "Roboto";
+    src: url(../fonts/RobotoRegular.ttf)
+}
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #DFD8C5;
+    font-family: arial;
+}
+
+p {
+    font-size: 1.4rem;
+}
+h2,h3,h4{font-weight: normal}
+h1 {
+    font-size: 2rem;
+    font-family: "Gothic A1";
+    color: white;
+    text-shadow: black 0 1px 0;
+    text-align: center;
+    width: 272px;
+    margin: 0 auto;
+    transform: translateY(calc(50vh - 50%));
+}
+h2 {
+    color: #2A2D30;
+}
+h2,
+h4 {
+    font-size: 2.6rem;
+    font-family: "DolceVita";
+}
+h3 {
+    font-size: 2.2rem;
+}
+img {
+    max-width: 100%;
+}
+header {
+    position: fixed;
+    width: 100%;
+}
+/*****************/
+/*GESTION DU MENU*/
+/*****************/
+.btn_burger {
+    width: 32px;
+    margin: 20px 20px 0 auto;
+}
+
+.menu {
+    background: #2A2D30;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 50px;
+    box-sizing: border-box;
+    font-family: "Roboto";
+    font-size: 1.5rem;
+    transform: translateY(-100%);
+    transition: transform 500ms ease;
+}
+
+.btn_burger:focus + .menu {
+    transform: translateY(0);
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.menu ul {
+    list-style: none;
+}
+/*****************/
+/*SECTION ACCUEIL*/
+/*****************/
+.section_accueil {
+    min-height: 100vh;
+    background: url(../images/fond_pixel_transparent.png), url(../images/fond_batipole.jpg) center;
+    background-size: cover;
+}
+.img_logo {
+    width: 178px;
+    display: block;
+    margin: 0 auto;
+}
+/******************/
+/*SECTION A PROPOS*/
+/******************/
+.section_apropos , .section_actus {
+    padding: 35px 20px 16px 20px;
+    box-sizing: border-box;
+}
+.section_apropos h2 {
+    margin-bottom: 31px;
+}
+.article_contenu {
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+.article_contenu h3 {
+    color: #D5BE7E;
+    font-family: "HelveticaN";
+    margin-bottom: 16px;
+}
+/*EQUIPE*/
+.membre{
+    background: #D5BE7E;
+    color: white;
+    padding: 14px;
+    box-sizing: border-box;
+    box-shadow:rgba(0,0,0,0.5) 0 0 4px;
+    margin-bottom: 20px;
+}
+.membre img{
+    margin-top: -14px;
+    margin-left: -14px;
+    max-width: calc(100% + 28px);
+}
+.membre h4{
+    margin: 18px 0;
+}
+/************************/
+/*SECTION NOS FORMATIONS*/
+/************************/
+.section_formations{
+ background: white;
+    padding: 20px;
+}
+.carte_de{
+    background: #3489ED  url(../images/demploi.jpg) center;  
+}
+.carte_de a{
+    color: #7CDA24;
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+.carte_salaries a , .carte_entreprises p{
+    color: white;
+    font-size: 1.8rem;
+    text-decoration: none;
+    text-shadow: black 0 1px 0;
+}
+.carte_salaries{
+    background: #FFA724  url(../images/salaries.jpg) center;  
+}
+.carte_entreprises{
+    background: #54DE23  url(../images/entreprises.jpg) center;  
+}
+.formation_carte{
+    margin: 15px 20px;
+    background-size: cover;
+    background-blend-mode: multiply;
+    box-shadow: rgba(0,0,0,0.5) 0 0 10px;
+}
+.carte_btn{
+    height: 171px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.carte_contenu{
+    height: 0;
+    opacity: 0;
+    
+    overflow: hidden;
+    padding: 0px;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+.carte_btn:focus + .carte_contenu{
+    padding: 20px;
+    height: 120px;
+    opacity: 1;
+    margin-top:-50px;
+}
+.carte_de .carte_btn:focus + .carte_contenu{
+    padding: 20px;
+    height: 80px;
+    opacity: 1;
+}
+.carte_salaries .carte_btn:focus + .carte_contenu{
+    padding: 20px;
+    height: 100px;
+    opacity: 1;
+}
+.carte_btn h3{
+    color: white;
+    font-family: "DolceVita";
+    width: 50%;
+}
+/********************/
+/*SECTION ACTUALITES*/
+/********************/
+.section_actus{
+    padding-bottom: 40px;
+}
+
+.article_actu{
+    background: white;
+    box-shadow: rgba(0,0,0,0.5) 0 0 10px;
+    margin-top: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.article_actu_entete img{
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    object-position: left;
+    box-shadow: rgba(0,0,0,0.5) 0 0 4px;
+    border-radius: 50%;
+    margin-right: 20px;
+    
+}
+
+.article_actu_entete{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+p.article_actu_partage a , .article_actu time{
+    font-size:1.1rem;
+    color: #747474;
+    text-decoration: none;
+}
+p.article_actu_partage a:first-of-type{
+    margin-right: 5px;
+}
+p.article_actu_partage a:last-of-type{
+    margin-left: 5px;
+}
+p.article_actu_partage{
+    margin-top: 20px;
+}
+/*****************/
+/*SECTION CONTACT*/
+/*****************/
+.section_contact{
+    background: #333333;
+    color: white;
+    padding: 20px;
+}
+.section_contact h2{
+    color: white;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+}
+.contact_informations p{
+    margin-bottom: 20px;
+}
+.contact_informations a , footer a{
+    color:#01B8F1;
+    text-decoration: none;
+}
+input[name="nom"],input[name="email"],textarea{
+    width: 100%;
+    border: none;
+    margin-bottom: 10px;
+    padding:0 10px;
+    box-sizing: border-box;
+}
+input{
+    height: 48px;
+}
+textarea{
+    height:161px;
+    padding: 10px;
+}
+::placeholder{
+    color: #808080;
+    font-size: 1.4rem;
+    font-family: arial;
+}
+input[type="submit"]{
+    background: #B7B7B7;
+    border: none;
+    color: white;
+    width: 150px;
+    font-size: 1.8rem;
+    margin-left: auto;
+    display: block;
+}
+.contact_rs{
+    text-align: right;
+    margin-top: 20px;
+}
+.contact_rs a:first-of-type{
+margin-right: 10px;}
+/*****************/
+/*    LE PIED    */
+/*****************/
+footer{
+    background: white;
+    padding: 20px;
+    text-align: center;
+}
+footer img:first-of-type{
+    width: 300px;
+}
+.pied_logos2 img:first-of-type{
+    width: 118px;
+}
+.pied_logos2 img:nth-of-type(2){
+    width: 75px;
+    margin: 0 6px;
+}
+.pied_logos2 img:nth-of-type(3){
+    width: 74px;
+}
+.pied_logos2{
+    margin-bottom: 20px;
+}
+/*****************************************/
+/*****************************************/
+/*****************************************/
+/***************TABLETTE YO***************/
+/*****************************************/
+/*****************************************/
+/*****************************************/
+@media screen and (min-width:768px){
+    .img_logo {
+        width: 334px;
+    }
+    
+    .membres{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .membre{
+        width: calc(50% - 10px);
+    }
+    
+    .conteneur_actus{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .conteneur_actus h2{
+        width: 100%;
+    }
+    .article_actu{
+        width: calc(50% - 19px);
+    }
+    
+    input[name="nom"],input[name="email"]{
+        width: calc(50% - 7px);
+    }
+    input[name="nom"]{
+        margin-right: 14px;
+        margin-bottom: 14px;
+    }
+    .conteneur_pied{
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: space-between;
+    }
+    .conteneur_pied p{
+        width: 100%;
+    }
+}
+/*****************************************/
+/*****************************************/
+/*****************************************/
+/***************DESKTOP  YO***************/
+/*****************************************/
+/*****************************************/
+/*****************************************/
+@media screen and (min-width:1080px){
+    .conteneur_apropos , .conteneur_formations , .conteneur_contact , .conteneur_pied , .conteneur_actus{
+        width: 1080px;
+        margin: 0 auto;
+    }
+    header{
+        background: #2A2D30;
+        height: 40px;
+        z-index: 1000;
+    }
+    .btn_burger{
+        display: none;
+    }
+    .menu{
+        position:static;
+        transform: translateY(0);
+        width: 1080px;
+        margin: 0 auto;
+        padding: 0;
+        height: 100%;
+    }
+    .menu ul{
+        display: flex;
+       padding-top: 8px;
+        
+    }
+    .menu ul li{
+        padding: 0;
+        margin: 0;
+        margin-left: 20px;
+    }
+    .membres{
+        justify-content: flex-start;
+    }
+    .membre{
+        width: /*calc(33% - 10px)*/326px;
+        margin-right: 30px;
+    }
+    .emericvidal{
+        width: 728px;
+        height: 317px;
+    }
+    .article_actu{
+        width: /*calc(33% - 25px)*/335px;
+    }
+    .formation_carte{
+        width: 296px;
+    }
+    .conteneur_formations, .conteneur_contact{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .conteneur_formations h2, .conteneur_contact h2 , .contact_rs{
+        width: 100%;
+    }
+    .contact_informations, .contact_form{
+        width: calc(50% - 20px);
+    }
+    .conteneur_pied{
+        width: 728px;
+        margin: 79px auto;
+    }
+}
