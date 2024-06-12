@@ -2646,6 +2646,15 @@ input, select, textarea {
 			.image.main img {
 				width: 100%;
 			}
+			.langague {
+				display: flex;
+			}
+			.logohtml {
+				width: 100px
+			}
+			.logocss {
+				width: 66px
+			}
 
 		@media screen and (max-width: 736px) {
 
