@@ -2685,6 +2685,9 @@ input, select, textarea {
 		.logocss{
 			width: 66px;
 		}
+		.logojs{
+			height: 100px;
+		}
 /* Actions */
 
 	ul.actions {
